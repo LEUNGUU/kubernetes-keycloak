@@ -5,6 +5,7 @@ data:
     #!/bin/bash
 
     # KEYCLOAK_STANDALONE_HA_CONF="/opt/jboss/keycloak/standalone/configuration/standalone-ha.xml"
+    echo $DB_PASSWORD
 
     BASE_SCRIPT_DIR="${BASE_SCRIPT_DIR:-/scripts}"
 
@@ -67,6 +68,7 @@ data:
   DB_PORT: "5432"
   DB_DATABASE: "keycloak"
   DB_USER: "postgres@solution-test-mgmt-db"
+  DB_PASSWORD: ""
   JDBC_PARAMS: "sslmode=require"
   KEYCLOAK_USER: "keycloak"
   BASE_SCRIPT_DIR: "/scripts"
