@@ -8,7 +8,7 @@ metadata:
     app: keycloak
 spec:
   serviceName: keycloak
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: keycloak
@@ -30,12 +30,12 @@ spec:
               - key: run.sh
                 path: run.sh
                 mode: 0755
-              - key: standalone-ha.xml
-                path: standalone-ha.xml
-                mode: 0644
+#              - key: standalone-ha.xml
+#                path: standalone-ha.xml
+#                mode: 0644
       containers:
         - name: keycloak
-          image: jboss/keycloak:3.4.2.Final
+          image: jboss/keycloak:7.0.0
           ports:
             - name: https
               containerPort: 8443
