@@ -54,7 +54,8 @@ data:
     #        /opt/jboss/keycloak/bin/add-user-keycloak.sh --user $KEYCLOAK_MGMT_USER --password $KEYCLOAK_MGMT_PASSWORD --enable --realm ManagementRealm -cw
     #    fi
 
-    exec /opt/jboss/tools/docker-entrypoint.sh -b=$MY_POD_IP -bmanagement=127.0.0.1 "$@"
+    sleep 100000
+    # exec /opt/jboss/tools/docker-entrypoint.sh -b=$MY_POD_IP -bmanagement=127.0.0.1 "$@"
 kind: ConfigMap
 metadata:
   labels:
