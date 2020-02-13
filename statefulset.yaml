@@ -30,9 +30,6 @@ spec:
               - key: run.sh
                 path: run.sh
                 mode: 0755
-#              - key: standalone-ha.xml
-#                path: standalone-ha.xml
-#                mode: 0644
       containers:
         - name: keycloak
           image: jboss/keycloak:7.0.0
