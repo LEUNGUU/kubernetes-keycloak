@@ -67,6 +67,7 @@ data:
   DB_PORT: "5432"
   DB_DATABASE: "keycloak"
   DB_USER: "postgres@solution-test-mgmt-db"
+  JDBC_PARAMS: "sslmode=require"
   KEYCLOAK_USER: "keycloak"
   BASE_SCRIPT_DIR: "/scripts"
   KEYCLOAK_OWNERS_COUNT: "1"
