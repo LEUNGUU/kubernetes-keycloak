@@ -1,0 +1,22 @@
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: keycloak-ingress
+spec:
+  rules:
+    - host: aa.sol-test.ecf.cloud
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: keycloak-external
+              servicePort: 8080
+          - path: /auth
+            backend:
+              serviceName: keycloak-external
+              servicePort: 8080
+  tls:
+    - hosts:
+        - aa.sol-test.ecf.cloud
+
