@@ -63,12 +63,12 @@ metadata:
 ---
 apiVersion: v1
 data:
-  DB_VENDOR: "postgres"
-  DB_ADDR: "solution-test-mgmt-db.postgres.database.azure.com" 
-  DB_PORT: "5432"
-  DB_DATABASE: "keycloak"
-  DB_USER: "postgres@solution-test-mgmt-db.postgres.database.azure.com"
-  JDBC_PARAMS: "ssl=true"
+  # DB_VENDOR: "h2"
+  # DB_ADDR: "solution-test-mgmt-db.postgres.database.azure.com" 
+  # DB_PORT: "5432"
+  # DB_DATABASE: "keycloak"
+  # DB_USER: "postgres@solution-test-mgmt-db.postgres.database.azure.com"
+  # JDBC_PARAMS: "ssl=true"
   KEYCLOAK_USER: "keycloak"
   BASE_SCRIPT_DIR: "/scripts"
   KEYCLOAK_OWNERS_COUNT: "1"
