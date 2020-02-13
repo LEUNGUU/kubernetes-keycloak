@@ -3,6 +3,9 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: keycloak-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    external-dns/managed: "true"
 spec:
   rules:
     - host: aa.sol-test.ecf.cloud
