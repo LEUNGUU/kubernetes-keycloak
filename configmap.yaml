@@ -53,7 +53,13 @@ data:
     #    if [ $KEYCLOAK_MGMT_USER ] && [ $KEYCLOAK_MGMT_PASSWORD ]; then
     #        /opt/jboss/keycloak/bin/add-user-keycloak.sh --user $KEYCLOAK_MGMT_USER --password $KEYCLOAK_MGMT_PASSWORD --enable --realm ManagementRealm -cw
     #    fi
-
+    #  deploy profile-service spi
+    curl -u iac_poc_sw_user_readonly:wLl4HmtrgKMoPLYx7KupojFM -o /opt/jboss/keycloak/standalone/deployments/cvc-profile-service-spi-3.0.0.war https://artifactory-lab.ngcvc.ericsson.net/artifactory/cv-software/delivery/cvc-profile-service-spi/cvc-profile-service-spi-3.0.0.war
+    # deploy cvc-themes
+    curl -u iac_poc_sw_user_readonly:wLl4HmtrgKMoPLYx7KupojFM -o /opt/jboss/keycloak/themes/cv-kc-themes-0.0.2.zip https://artifactory-lab.ngcvc.ericsson.net/artifactory/cv-software/delivery/keycloak-theme/cv-kc-themes-0.0.2.zip
+    cd /opt/jboss/keycloak/themes/
+    unzip cv-kc-themes-0.0.2.zip
+    cd -
     exec bash -x /opt/jboss/tools/docker-entrypoint.sh -b=$MY_POD_IP -bmanagement=127.0.0.1 "$@"
 kind: ConfigMap
 metadata:
@@ -69,7 +75,7 @@ data:
   # DB_DATABASE: "keycloak"
   # DB_USER: "postgres@solution-test-mgmt-db.postgres.database.azure.com"
   # JDBC_PARAMS: "ssl=true"
-  PROXY_ADDRESS_FORWARDING: true
+  PROXY_ADDRESS_FORWARDING: "true"
   KEYCLOAK_USER: "keycloak"
   BASE_SCRIPT_DIR: "/scripts"
   KEYCLOAK_OWNERS_COUNT: "1"
